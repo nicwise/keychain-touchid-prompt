@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Keychain Password View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="KeychainPasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3"/>
+                        <viewControllerLayoutGuide type="bottom" id="4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5">
+                                <rect key="frame" x="100.5" y="269" width="119" height="30"/>
+                                <state key="normal" title="Press me to login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="PressToLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="5" secondAttribute="centerX" id="6YS-UF-5qP"/>
+                            <constraint firstAttribute="centerY" secondItem="5" secondAttribute="centerY" id="GmR-xf-wiA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="10" kind="modal" identifier="LoggedIn" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="1cl-Bu-BQX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9">
+            <objects>
+                <viewController id="10" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7"/>
+                        <viewControllerLayoutGuide type="bottom" id="8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="11">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to the secure part of your app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="14">
+                                <rect key="frame" x="6" y="273" width="308.5" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BO-p4-o29">
+                                <rect key="frame" x="122" y="313.5" width="76" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3nS-mh-sSE"/>
+                                    <constraint firstAttribute="width" constant="76" id="sgZ-xe-mys"/>
+                                </constraints>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PAa-l6-nwl" kind="unwind" unwindAction="UnwindSegue:" id="m2j-Sq-M1e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="14" secondAttribute="centerX" id="Ck8-J7-vfi"/>
+                            <constraint firstItem="0BO-p4-o29" firstAttribute="top" secondItem="14" secondAttribute="bottom" constant="20" id="Jz2-7n-MDF"/>
+                            <constraint firstAttribute="centerX" secondItem="0BO-p4-o29" secondAttribute="centerX" id="W29-8t-KH7"/>
+                            <constraint firstAttribute="centerY" secondItem="14" secondAttribute="centerY" id="vXt-rU-6ao"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PAa-l6-nwl" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="494" y="5"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
